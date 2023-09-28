@@ -1,81 +1,166 @@
 {
   "ingredientes": {
-    "paes": [
+    "breads": [
       {
         "id": 1,
-        "tipo": "Italiano Branco"
+        "type": "Italian bread"
       },
       {
         "id": 2,
-        "tipo": "3 Queijos"
+        "type": "3 cheeses"
       },
       {
         "id": 3,
-        "tipo": "Parmesão e Orégano"
+        "type": "Parmesan and Oregano"
       },
       {
         "id": 4,
-        "tipo": "Integral"
+        "type": "Integral"
       }
     ],
-    "carnes": [
+    "meats": [
       {
         "id": 1,
-        "tipo": "Maminha"
+        "type": "Trip trip"
       },
       {
         "id": 2,
-        "tipo": "Alcatra"
+        "type": "Rump steak"
       },
       {
         "id": 3,
-        "tipo": "Picanha"
+        "type": "Rump cap"
       },
       {
         "id": 4,
-        "tipo": "Veggie burger"
+        "type": "Veggie burger"
       }
     ],
-    "opcionais": [
+    "options": [
       {
         "id": 1,
-        "tipo": "Bacon"
+        "type": "Bacon"
       },
       {
         "id": 2,
-        "tipo": "Cheddar"
+        "type": "Cheddar"
       },
       {
         "id": 3,
-        "tipo": "Salame"
+        "type": "Salami"
       },
       {
         "id": 4,
-        "tipo": "Tomate"
+        "type": "Tomato"
       },
       {
         "id": 4,
-        "tipo": "Cebola roxa"
+        "type": "Red onion"
       },
       {
         "id": 4,
-        "tipo": "Pepino"
+        "type": "Cucumber"
       }
     ]
   },
   "status": [
     {
       "id": 1,
-      "tipo": "Solicitado"
+      "type": "Requested"
     },
     {
       "id": 2,
-      "tipo": "Em produção"
+      "type": "In production"
     },
     {
       "id": 3,
-      "tipo": "Finalizado"
+      "type": "Finished"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "wd",
+      "bread": "3 cheeses",
+      "meat": "Rump steak",
+      "optionsdata": [
+        "Bacon"
+      ],
+      "stats": "Requested",
+      "id": 1
+    },
+    {
+      "nome": "Pedro Henrique Bezerra",
+      "bread": "Italian bread",
+      "meat": "Rump steak",
+      "optionsdata": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "stats": "Requested",
+      "id": 2
+    },
+    {
+      "nome": "dsdssd",
+      "bread": "3 cheeses",
+      "meat": "Rump steak",
+      "optionsdata": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "stats": "Requested",
+      "id": 3
+    },
+    {
+      "nome": null,
+      "bread": null,
+      "meat": null,
+      "optionsdata": [],
+      "stats": "Requested",
+      "id": 4
+    },
+    {
+      "nome": null,
+      "bread": "3 cheeses",
+      "meat": "Rump steak",
+      "optionsdata": [],
+      "stats": "Requested",
+      "id": 5
+    },
+    {
+      "nome": "",
+      "bread": "",
+      "meat": "",
+      "optionsdata": [],
+      "stats": "Requested",
+      "id": 6
+    },
+    {
+      "nome": "Pedro Henrique Bezerra",
+      "bread": "Italian bread",
+      "meat": "Trip trip",
+      "optionsdata": [
+        "Bacon"
+      ],
+      "stats": "Requested",
+      "id": 7
+    },
+    {
+      "nome": "werg",
+      "bread": "3 cheeses",
+      "meat": "meat",
+      "optionsdata": [
+        "Bacon"
+      ],
+      "stats": "Requested",
+      "id": 8
+    },
+    {
+      "nome": null,
+      "bread": null,
+      "meat": null,
+      "optionsdata": [],
+      "stats": "Requested",
+      "id": 9
+    }
+  ]
 }
