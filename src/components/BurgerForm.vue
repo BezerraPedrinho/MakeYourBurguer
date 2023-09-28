@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>messeger</p>
+    <Messeger :msg="msg" v-show="msg" />
     <div>
       <form id="burger-form" @submit="createBurguer">
         <div class="input-container">
@@ -83,6 +83,8 @@
   </div>
 </template>
 <script>
+import Messeger from "./Messeger.vue";
+
 export default {
   name: "BurgerForm",
   data() {
@@ -96,6 +98,7 @@ export default {
       stats: "requested",
       messeger: null,
       options: {},
+      msg: null,
     };
   },
   methods: {
@@ -126,17 +129,20 @@ export default {
       });
       const res = await req.json();
       console.log(res);
-
+      this.msg = `Your order N ${res.id} has been requested`;
+      setTimeout(() => {
+        this.msg = "";
+      }, 3000);
       this.name = "";
       this.bread = "";
       this.meat = "";
       this.options = {};
     },
   },
-
   mounted() {
     this.getIngredients();
   },
+  components: { Messeger },
 };
 </script>
 <style scoped>
