@@ -30,7 +30,7 @@
               v-for="stat in stats"
               :key="stat.id"
               value="stat.type"
-              :selected="burger.stats"
+              :selected="burger.stats === stat.type"
             >
               {{ stat.type }}
             </option>
