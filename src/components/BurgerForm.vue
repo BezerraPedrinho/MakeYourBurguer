@@ -115,7 +115,7 @@ export default {
         (option) => this.options[option]
       );
       const data = {
-        nome: this.name,
+        name: this.name,
         bread: this.bread,
         meat: this.meat,
         optionsdata: selectedOptions,
