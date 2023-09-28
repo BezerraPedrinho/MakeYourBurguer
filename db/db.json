@@ -77,5 +77,27 @@
       "type": "Finished"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "wd",
+      "bread": "3 cheeses",
+      "meat": "Rump steak",
+      "optionsdata": [
+        "Bacon"
+      ],
+      "stats": "Requested",
+      "id": 1
+    },
+    {
+      "nome": "Pedro Henrique Bezerra",
+      "bread": "Italian bread",
+      "meat": "Rump steak",
+      "optionsdata": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "stats": "Requested",
+      "id": 2
+    }
+  ]
 }

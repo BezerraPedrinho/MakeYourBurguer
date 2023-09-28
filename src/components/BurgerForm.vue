@@ -2,7 +2,7 @@
   <div>
     <p>messeger</p>
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurguer">
         <div class="input-container">
           <label class="input-container__label" for="name">Your Name</label>
           <input
@@ -64,7 +64,7 @@
                 class="input-container__input checkbox-container__checkbox"
                 type="checkbox"
                 name="options"
-                v-model="options"
+                v-model="options[option.type]"
                 :value="option.type"
               />
               <span class="checkbox-container__span">{{ option.type }}</span>
@@ -91,10 +91,11 @@ export default {
       meats: null,
       optionsdata: null,
       name: null,
-      breadd: null,
+      bread: null,
       meat: null,
       stats: "requested",
       messeger: null,
+      options: {},
     };
   },
   methods: {
@@ -105,7 +106,34 @@ export default {
       this.meats = data.meats;
       this.optionsdata = data.options;
     },
+    async createBurguer(e) {
+      e.preventDefault();
+      const selectedOptions = Object.keys(this.options).filter(
+        (option) => this.options[option]
+      );
+      const data = {
+        nome: this.name,
+        bread: this.bread,
+        meat: this.meat,
+        optionsdata: selectedOptions,
+        stats: "Requested",
+      };
+      const dataJson = JSON.stringify(data);
+      const req = await fetch("http://localhost:3000/burgers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+      const res = await req.json();
+      console.log(res);
+
+      this.name = "";
+      this.bread = "";
+      this.meat = "";
+      this.options = {};
+    },
   },
+
   mounted() {
     this.getIngredients();
   },
