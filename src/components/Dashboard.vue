@@ -26,6 +26,14 @@
         <div>
           <select name="" class="stats">
             <option value="">Select</option>
+            <option
+              v-for="stat in stats"
+              :key="stat.id"
+              value="stat.type"
+              :selected="burger.stats"
+            >
+              {{ stat.type }}
+            </option>
           </select>
           <button class="delete-btn">Cancel</button>
         </div>
@@ -40,7 +48,7 @@ export default {
     return {
       burgers: null,
       burger_id: null,
-      status: [],
+      stats: [],
     };
   },
   methods: {
@@ -48,6 +56,13 @@ export default {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
       this.burgers = data;
+      console.log(data);
+      this.getStats();
+    },
+    async getStats() {
+      const req = await fetch("http://localhost:3000/status");
+      const data = await req.json();
+      this.stats = data;
       console.log(data);
     },
   },
@@ -58,6 +73,7 @@ export default {
 </script>
 <style scoped>
 .burger-table {
+  min-width: 1090px;
   max-width: 1200px;
   margin: 0 auto;
 }
