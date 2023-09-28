@@ -26,22 +26,28 @@
             v-model="bread"
           >
             <option value="">types of bread</option>
-            <option value="wholeGrain">whole grain</option>
+            <option v-for="bread in breads" :key="bread.id" :value="bread.type">
+              {{ bread.type }}
+            </option>
           </select>
         </div>
 
         <div class="input-container">
-          <label class="input-container__label" for="protain"
-            >Select your protain:</label
+          <label class="input-container__label" for="meat"
+            >Select your meat:</label
           >
           <select
             class="input-container__select"
-            name="protain"
-            id="protain"
-            v-model="protain"
+            name="meat"
+            id="meat"
+            v-model="meat"
           >
-            <option value="">Types of protain</option>
+            <option value="">Types of meats</option>
             <option value="meat">Meat</option>
+
+            <option v-for="meat in meats" :key="meat.id" :value="meat.type">
+              {{ meat.type }}
+            </option>
           </select>
         </div>
 
@@ -49,35 +55,19 @@
           <label class="input-container__label" for="options">Options:</label>
 
           <div class="checkbox-container">
-            <div class="checkbox-container__path">
+            <div
+              class="checkbox-container__path"
+              v-for="option in optionsdata"
+              :key="option.id"
+            >
               <input
                 class="input-container__input checkbox-container__checkbox"
                 type="checkbox"
                 name="options"
                 v-model="options"
-                value="salami"
+                :value="option.type"
               />
-              <span class="checkbox-container__span">Salami</span>
-            </div>
-            <div class="checkbox-container__path">
-              <input
-                class="input-container__input checkbox-container__checkbox"
-                type="checkbox"
-                name="options"
-                v-model="options"
-                value="salami"
-              />
-              <span class="checkbox-container__span">Salami</span>
-            </div>
-            <div class="checkbox-container__path">
-              <input
-                class="input-container__input checkbox-container__checkbox"
-                type="checkbox"
-                name="options"
-                v-model="options"
-                value="salami"
-              />
-              <span class="checkbox-container__span">Salami</span>
+              <span class="checkbox-container__span">{{ option.type }}</span>
             </div>
           </div>
         </div>
@@ -95,6 +85,30 @@
 <script>
 export default {
   name: "BurgerForm",
+  data() {
+    return {
+      breads: null,
+      meats: null,
+      optionsdata: null,
+      name: null,
+      breadd: null,
+      meat: null,
+      stats: "requested",
+      messeger: null,
+    };
+  },
+  methods: {
+    async getIngredients() {
+      const req = await fetch("http://localhost:3000/ingredientes");
+      const data = await req.json();
+      this.breads = data.breads;
+      this.meats = data.meats;
+      this.optionsdata = data.options;
+    },
+  },
+  mounted() {
+    this.getIngredients();
+  },
 };
 </script>
 <style scoped>
