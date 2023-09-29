@@ -79,27 +79,28 @@
   ],
   "burgers": [
     {
-      "name": "Pedro Henrique Bezerra",
-      "bread": "Italian bread",
-      "meat": "Trip trip",
-      "optionsdata": [
-        "Bacon",
-        "Cheddar",
-        "Tomato"
-      ],
-      "stats": "Requested",
+      "name": "wdqdwqqwdqdw",
+      "bread": null,
+      "meat": null,
+      "optionsdata": [],
+      "stats": "In production",
       "id": 1
     },
     {
-      "name": "anime keychain",
-      "bread": "Italian bread",
-      "meat": "Rump cap",
-      "optionsdata": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "stats": "Requested",
+      "name": "wdqqwdqwdqwdqwddqw",
+      "bread": "",
+      "meat": "",
+      "optionsdata": [],
+      "stats": "Finished",
       "id": 2
+    },
+    {
+      "name": "dsdsds",
+      "bread": "",
+      "meat": "",
+      "optionsdata": [],
+      "stats": "Requested",
+      "id": 3
     }
   ]
 }

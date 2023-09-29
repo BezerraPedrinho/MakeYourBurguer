@@ -1,4 +1,5 @@
 <template>
+  <Messeger :msg="msg" v-show="msg" />
   <div class="burger-table">
     <div>
       <div class="burger-table-heading">
@@ -24,12 +25,16 @@
           </ul>
         </div>
         <div>
-          <select name="" class="stats">
+          <select
+            name="stats"
+            class="stats"
+            @change="updatedBurger($event, burger.id)"
+          >
             <option value="">Select</option>
             <option
               v-for="stat in stats"
               :key="stat.id"
-              value="stat.type"
+              :value="stat.type"
               :selected="burger.stats === stat.type"
             >
               {{ stat.type }}
@@ -44,6 +49,7 @@
   </div>
 </template>
 <script>
+import Messeger from "./Messeger.vue";
 export default {
   name: "DashBoard",
   data() {
@@ -51,7 +57,11 @@ export default {
       burgers: null,
       burger_id: null,
       stats: [],
+      msg: null,
     };
+  },
+  components: {
+    Messeger,
   },
   methods: {
     async getOrders() {
@@ -72,15 +82,38 @@ export default {
         method: "DELETE",
       });
       const res = await req.json();
+      this.msg = `Your order it was canceled`;
+
+      setTimeout(() => {
+        this.msg = "";
+      }, 3000);
       this.getOrders();
+    },
+    async updatedBurger(event, id) {
+      const option = event.target.value;
+      const dataJson = JSON.stringify({ stats: option });
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-type": "application/json" },
+        body: dataJson,
+      });
+      const res = await req.json();
+      this.msg = `Your order ${res.id} updated to ${res.stats}`;
+
+      setTimeout(() => {
+        this.msg = "";
+      }, 3000);
+
       console.log(res);
     },
   },
+
   mounted() {
     this.getOrders();
   },
 };
 </script>
+
 <style scoped>
 .burger-table {
   min-width: 1090px;
