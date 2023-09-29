@@ -79,88 +79,28 @@
   ],
   "burgers": [
     {
-      "nome": "wd",
-      "bread": "3 cheeses",
-      "meat": "Rump steak",
-      "optionsdata": [
-        "Bacon"
-      ],
-      "stats": "Requested",
-      "id": 1
-    },
-    {
-      "nome": "Pedro Henrique Bezerra",
-      "bread": "Italian bread",
-      "meat": "Rump steak",
-      "optionsdata": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "stats": "Requested",
-      "id": 2
-    },
-    {
-      "nome": "dsdssd",
-      "bread": "3 cheeses",
-      "meat": "Rump steak",
-      "optionsdata": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "stats": "Requested",
-      "id": 3
-    },
-    {
-      "nome": null,
+      "name": "wdqdwqqwdqdw",
       "bread": null,
       "meat": null,
       "optionsdata": [],
-      "stats": "Requested",
-      "id": 4
+      "stats": "In production",
+      "id": 1
     },
     {
-      "nome": null,
-      "bread": "3 cheeses",
-      "meat": "Rump steak",
+      "name": "wdqqwdqwdqwdqwddqw",
+      "bread": "",
+      "meat": "",
       "optionsdata": [],
-      "stats": "Requested",
-      "id": 5
+      "stats": "Finished",
+      "id": 2
     },
     {
-      "nome": "",
+      "name": "dsdsds",
       "bread": "",
       "meat": "",
       "optionsdata": [],
       "stats": "Requested",
-      "id": 6
-    },
-    {
-      "nome": "Pedro Henrique Bezerra",
-      "bread": "Italian bread",
-      "meat": "Trip trip",
-      "optionsdata": [
-        "Bacon"
-      ],
-      "stats": "Requested",
-      "id": 7
-    },
-    {
-      "nome": "werg",
-      "bread": "3 cheeses",
-      "meat": "meat",
-      "optionsdata": [
-        "Bacon"
-      ],
-      "stats": "Requested",
-      "id": 8
-    },
-    {
-      "nome": null,
-      "bread": null,
-      "meat": null,
-      "optionsdata": [],
-      "stats": "Requested",
-      "id": 9
+      "id": 3
     }
   ]
 }

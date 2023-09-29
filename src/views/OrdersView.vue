@@ -2,13 +2,13 @@
   <div class="main-container">
     <h1>Ordes Management</h1>
 
-    <Dashboad />
+    <Dashboard />
   </div>
 </template>
 <script>
-import Dashboad from "@/components/Dashboad.vue";
+import Dashboard from "@/components/Dashboard.vue";
 export default {
   name: "ordes",
-  components: { Dashboad },
+  components: { Dashboard },
 };
 </script>
